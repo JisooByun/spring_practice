@@ -36,7 +36,14 @@ public class EncoderFilter implements Filter {
 
 		request.setCharacterEncoding("utf-8");
 		
+		long begin = System.currentTimeMillis();
+		System.out.println(begin);
 		chain.doFilter(request, response);
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end);
+		System.out.println("작업시간:"+(end-begin));
+		
 	}
 
 	/**
